@@ -26,20 +26,71 @@ This repository contains an Azure Function App designed to provide insights from
     cd <repository-directory>
     ```
 
-2. **Set up environment variables**:
+2. **create the virtual environment (venv) **:
 
-   Ensure the following environment variables are set in your Azure Function App configuration:
-   - `AZURE_ENDPOINTS`: Your Azure OpenAI endpoint.
-   - `API_KEY`: Your Azure OpenAI API key.
-   - `API_VERSION`: Azure OpenAI API version.
-   - `BLOB_STORAGE_CONNEC_STRING`: Connection string for Azure Blob Storage.
+    ```bash
+    python -m venv venv
+    ```
+    Note: create venv in your directory.
+   ![image](https://github.com/gatttaca01/Call_Center_Insight/assets/78308539/31bc3cc8-6031-42d5-ac8a-8de4f433ee41)
+
+   
+4. **Sanal Ortamı Etkinleştirin**:
+
+    - Windows:
+      ```bash
+      venv\Scripts\activate.ps1
+      ```
+    - MacOS/Linux:
+      ```bash
+      source venv/bin/activate.ps1
+      ```
+
+5. **Set Environment Variables**:
+
+    Ensure the following environment variables are set in your Azure Function App configuration:
+    - `AZURE_ENDPOINTS`: Your Azure OpenAI endpoint.
+    - `API_KEY`: Your Azure OpenAI API key.
+    - `API_VERSION`: Azure OpenAI API version.
+    - `BLOB_STORAGE_CONNEC_STRING`: Azure Blob Storage connection string.
+    - `AzureWebJobsStorage`: Azure WebJobs storage connection string.
+    - `FUNCTIONS_WORKER_RUNTIME`: Python.
+    - `AzureWebJobsFeatureFlags`: EnableWorkerIndexing.
+
+Example `local.settings.json` (fill the keyaccording to description in your LOCAL ):
+
+```json
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "your-blob-storage-connection-string",
+    "FUNCTIONS_WORKER_RUNTIME": "python",
+    "AzureWebJobsFeatureFlags": "EnableWorkerIndexing",
+    "BLOB_STORAGE_CONNEC_STRING": "your-blob-storage-connection-string",
+    "AZURE_ENDPOINTS": "your-azure-openAI-endpoints",
+    "API_KEY": "your-azure-openAI-api-key",
+    "API_VERSION": "your-api-azure-openAI-version",
+    "StorageAccountName": "your-storage-account-name",
+    "StorageInputContainerName": "STORAGE-INPUT-CONTAINER-NAME",
+    "StorageOutputContainerName": "STORAGE-OUTPUT-CONTAINER-NAME"  
+  }
+}
+```
+! please create local.settings.json and copy paste this json examle in it and fill the requirement places
 
 ### Dependencies
 
-Install the necessary Python packages:
-```bash
-pip install azure-functions azure-storage-blob openai requests
-```
+6. Install the necessary Python packages:
+
+    ```bash
+    pip install azure-functions azure-storage-blob openai requests
+    ```
+
+    or
+
+    ```bash
+    pip install -r requirements.txt
+    ```
 
 ## File Structure
 
@@ -71,6 +122,22 @@ Handles the extraction of insights from the uploaded transcript file using Azure
 - `upload_json_file(req: func.HttpRequest) -> func.HttpResponse`: Handles the upload of JSON files to Azure Blob Storage.
 - `insight_extraction(file_content, prompt)`: Processes the transcript and extracts insights using Azure OpenAI.
 
+
+## Customization
+
+1. **Welcome Page**: 
+    please fill the your background image with blob Storage account name and your image 
+               background-image: url('Your-blob-sas-url');
+            
+  
+3. **Start the Process**: Click the "Let's Start" button to navigate to the Upload Page.
+4. **Upload Files**: Choose a transcript JSON file or a WAV audio file, enter a prompt, and submit.
+5. **View Results**: The Extraction Page will display the uploaded content and the extracted insights.
+
+
+
+
+
 ## Usage
 
 1. **Navigate to the Welcome Page**: 
@@ -84,7 +151,7 @@ Handles the extraction of insights from the uploaded transcript file using Azure
 ## Notes
 
 - Ensure all necessary Azure resources (Function App, Blob Storage, OpenAI) are correctly configured and accessible.
-- Update the `connection_string` and other configuration settings as per your Azure setup.
+- Update the `connection_string` and other configuration settings as per your Azure setup. 
 
 ## Contributing
 
