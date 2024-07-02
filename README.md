@@ -43,15 +43,15 @@ This repository contains an Azure Function App designed to provide insights from
     
 - Windows:
   
-          ```bash
+  ```bash
           venv\Scripts\activate.ps1
-          ```
+   ```
   
 - MacOS/Linux:
   
-          ```bash
+   ```bash
           source venv/bin/activate.ps1
-          ```
+    ```
 
 3. **Set Environment Variables**:
 
