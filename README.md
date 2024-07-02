@@ -26,6 +26,8 @@ This repository contains an Azure Function App designed to provide insights from
     cd <repository-directory>
     ```
 
+    then open with Visual Studio Code or other IDE
+
 2. **create the virtual environment (venv)(optional) **:
 
     ```bash
@@ -96,6 +98,24 @@ Example `local.settings.json` (fill the keyaccording to description in your LOCA
     ```bash
     pip install -r requirements.txt
     ```
+    
+5. Deploy the function App
+   
+   After fill and run the commands, deploy this app to Azure
+   Click azure symbol in VsCode
+   ![image](https://github.com/gatttaca01/Call_Center_Insight/assets/78308539/2b41f06f-05a4-466a-829e-7948d4500dfe)
+
+    Then create a Function App
+   ![image](https://github.com/gatttaca01/Call_Center_Insight/assets/78308539/ef89d156-136b-41f0-892d-6e5c9608b8ea)
+
+   Give the name `callcenter-insights`
+
+   Select `python 3.11`
+
+   Select region  `sweden central`(optionally you can choose this region)
+
+   
+
 
 ## File Structure
 
@@ -110,17 +130,26 @@ Route: `/api/Welcomepage`
 
 Displays a welcome page with a background image and a link to start the process.
 
+![Screenshot 2024-05-22 172303](https://github.com/gatttaca01/Call_Center_Insight/assets/78308539/e8746d15-3b8f-4452-9e7d-afd43cce9768)
+
+
 ### Upload Page
 
 Route: `/api/Uploadpage`
 
 Provides a form for uploading JSON transcript files or WAV audio files, along with a text prompt.
 
+![Screenshot 2024-06-28 131210](https://github.com/gatttaca01/Call_Center_Insight/assets/78308539/f8fc6005-636e-4609-9463-ecfd86cacdca)
+
+
 ### Extraction Page
 
 Route: `/api/Extractionpage`
 
 Handles the extraction of insights from the uploaded transcript file using Azure OpenAI(gpt-4turbo).
+
+![Screenshot 2024-05-21 131053](https://github.com/gatttaca01/Call_Center_Insight/assets/78308539/efa7d902-a269-4ca0-80e6-0ff5487ecaaf)
+
 
 ### Helper Functions
 
