@@ -38,19 +38,22 @@ This repository contains an Azure Function App designed to provide insights from
 
    ![image](https://github.com/gatttaca01/Call_Center_Insight/assets/78308539/31bc3cc8-6031-42d5-ac8a-8de4f433ee41)
 
-   
- **Activate virtual environment **:
+
+ Activate virtual environment :
     
-        - Windows:
+- Windows:
+  
           ```bash
           venv\Scripts\activate.ps1
           ```
-        - MacOS/Linux:
+  
+- MacOS/Linux:
+  
           ```bash
           source venv/bin/activate.ps1
           ```
 
-4. **Set Environment Variables**:
+3. **Set Environment Variables**:
 
     Ensure the following environment variables are set in your Azure Function App configuration:
     - `AZURE_ENDPOINTS`: Your Azure OpenAI endpoint.
@@ -120,6 +123,12 @@ Example `local.settings.json` (fill the keyaccording to description in your LOCA
    -Select region  `sweden central`(optionally you can choose this region)
 
 
+   After succesfully deployed app your function resource look like in Azure. Click browse and try the app : )
+   
+   ![image](https://github.com/gatttaca01/Call_Center_Insight/assets/78308539/2ba3bfa6-eaf8-4a19-93ac-09334db1ba6b)
+
+
+
 ## File Structure
 
 - `function_app.py`: Main application file containing HTTP-triggered functions and routes.
@@ -149,7 +158,7 @@ Provides a form for uploading JSON transcript files or WAV audio files, along wi
 
 Route: `/api/Extractionpage`
 
-Handles the extraction of insights from the uploaded transcript file using Azure OpenAI(gpt-4turbo).
+Handles the extraction of insights from the uploaded transcript file using Azure OpenAI(gpt-35-turbo).
 
 ![Screenshot 2024-05-21 131053](https://github.com/gatttaca01/Call_Center_Insight/assets/78308539/efa7d902-a269-4ca0-80e6-0ff5487ecaaf)
 
@@ -171,7 +180,7 @@ Handles the extraction of insights from the uploaded transcript file using Azure
 
 ## Notes
 
-- Ensure all necessary Azure resources (Function App, Blob Storage, OpenAI) are correctly configured and accessible.
+- Ensure all necessary Azure resources (Function App, Blob Storage, AzurevOpenAI) are correctly configured and accessible.
 - Update the `connection_string` and other configuration settings as per your Azure setup.
 - please check the azure function supported python version in this scenario I used python 3.11.9
 
