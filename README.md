@@ -39,7 +39,7 @@ This repository contains an Azure Function App designed to provide insights from
    ![image](https://github.com/gatttaca01/Call_Center_Insight/assets/78308539/31bc3cc8-6031-42d5-ac8a-8de4f433ee41)
 
    
-    A. **Sanal Ortamı Etkinleştirin**:
+    A. **Activate virtual environment **:
     
         - Windows:
           ```bash
