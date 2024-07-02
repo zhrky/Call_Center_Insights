@@ -33,7 +33,9 @@ This repository contains an Azure Function App designed to provide insights from
     ```bash
     python -m venv venv
     ```
-    Note: create venv in your directory.
+
+-Note: create venv in your directory.
+
    ![image](https://github.com/gatttaca01/Call_Center_Insight/assets/78308539/31bc3cc8-6031-42d5-ac8a-8de4f433ee41)
 
    
@@ -48,7 +50,7 @@ This repository contains an Azure Function App designed to provide insights from
           source venv/bin/activate.ps1
           ```
 
-3. **Set Environment Variables**:
+4. **Set Environment Variables**:
 
     Ensure the following environment variables are set in your Azure Function App configuration:
     - `AZURE_ENDPOINTS`: Your Azure OpenAI endpoint.
