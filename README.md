@@ -26,7 +26,7 @@ This repository contains an Azure Function App designed to provide insights from
     cd <repository-directory>
     ```
 
-2. **create the virtual environment (venv) **:
+2. **create the virtual environment (venv)(optional) **:
 
     ```bash
     python -m venv venv
@@ -35,18 +35,18 @@ This repository contains an Azure Function App designed to provide insights from
    ![image](https://github.com/gatttaca01/Call_Center_Insight/assets/78308539/31bc3cc8-6031-42d5-ac8a-8de4f433ee41)
 
    
-4. **Sanal Ortamı Etkinleştirin**:
+    A. **Sanal Ortamı Etkinleştirin**:
+    
+        - Windows:
+          ```bash
+          venv\Scripts\activate.ps1
+          ```
+        - MacOS/Linux:
+          ```bash
+          source venv/bin/activate.ps1
+          ```
 
-    - Windows:
-      ```bash
-      venv\Scripts\activate.ps1
-      ```
-    - MacOS/Linux:
-      ```bash
-      source venv/bin/activate.ps1
-      ```
-
-5. **Set Environment Variables**:
+3. **Set Environment Variables**:
 
     Ensure the following environment variables are set in your Azure Function App configuration:
     - `AZURE_ENDPOINTS`: Your Azure OpenAI endpoint.
@@ -63,16 +63,21 @@ Example `local.settings.json` (fill the keyaccording to description in your LOCA
 {
   "IsEncrypted": false,
   "Values": {
-    "AzureWebJobsStorage": "your-blob-storage-connection-string",
+    "AzureWebJobsStorage": "<your-blob-storage-connection-string>",
     "FUNCTIONS_WORKER_RUNTIME": "python",
     "AzureWebJobsFeatureFlags": "EnableWorkerIndexing",
-    "BLOB_STORAGE_CONNEC_STRING": "your-blob-storage-connection-string",
-    "AZURE_ENDPOINTS": "your-azure-openAI-endpoints",
-    "API_KEY": "your-azure-openAI-api-key",
-    "API_VERSION": "your-api-azure-openAI-version",
-    "StorageAccountName": "your-storage-account-name",
-    "StorageInputContainerName": "STORAGE-INPUT-CONTAINER-NAME",
-    "StorageOutputContainerName": "STORAGE-OUTPUT-CONTAINER-NAME"  
+    "BLOB_STORAGE_CONNEC_STRING": "<your-blob-storage-connection-string>",
+    "AZURE_ENDPOINTS": "<your-azure-openAI-endpoints>",
+    "API_KEY": "<your-azure-openAI-api-key>",
+    "API_VERSION": "<your-api-azure-openAI-version>",
+    "StorageAccountName": "<your-storage-account-name>",
+    "StorageInputContainerName": "<STORAGE-INPUT-CONTAINER-NAME>",
+    "StorageOutputContainerName": "<STORAGE-OUTPUT-CONTAINER-NAME>",
+    "WelcomeBackgroundSAS": "<welcome-page-background-sas-url>",
+    "UploadBackgroundSAS": "<upload-page-background-sas-url>",
+    "ExtractionBackgroundSAS": "<extraction-page-background-sas-url>",
+    "LogoSAS": "<Brand-logo-sas-url>",
+    "LoadingGifSAS": "<loading-gif-sas-url>"
   }
 }
 ```
@@ -80,7 +85,7 @@ Example `local.settings.json` (fill the keyaccording to description in your LOCA
 
 ### Dependencies
 
-6. Install the necessary Python packages:
+4. Install the necessary Python packages:
 
     ```bash
     pip install azure-functions azure-storage-blob openai requests
@@ -115,7 +120,7 @@ Provides a form for uploading JSON transcript files or WAV audio files, along wi
 
 Route: `/api/Extractionpage`
 
-Handles the extraction of insights from the uploaded transcript file using Azure OpenAI.
+Handles the extraction of insights from the uploaded transcript file using Azure OpenAI(gpt-4turbo).
 
 ### Helper Functions
 
@@ -123,27 +128,11 @@ Handles the extraction of insights from the uploaded transcript file using Azure
 - `insight_extraction(file_content, prompt)`: Processes the transcript and extracts insights using Azure OpenAI.
 
 
-## Customization
-
-1. **Welcome Page**: 
-    please fill the your background image with blob Storage account name and your image 
-               background-image: url('Your-blob-sas-url');
-            
-  
-3. **Start the Process**: Click the "Let's Start" button to navigate to the Upload Page.
-4. **Upload Files**: Choose a transcript JSON file or a WAV audio file, enter a prompt, and submit.
-5. **View Results**: The Extraction Page will display the uploaded content and the extracted insights.
-
-
-
-
 
 ## Usage
 
-1. **Navigate to the Welcome Page**: 
-   ```
-   <your-function-app-url>/api/Welcomepage
-   ```
+1. After configurations run the functions
+
 2. **Start the Process**: Click the "Let's Start" button to navigate to the Upload Page.
 3. **Upload Files**: Choose a transcript JSON file or a WAV audio file, enter a prompt, and submit.
 4. **View Results**: The Extraction Page will display the uploaded content and the extracted insights.
@@ -151,7 +140,8 @@ Handles the extraction of insights from the uploaded transcript file using Azure
 ## Notes
 
 - Ensure all necessary Azure resources (Function App, Blob Storage, OpenAI) are correctly configured and accessible.
-- Update the `connection_string` and other configuration settings as per your Azure setup. 
+- Update the `connection_string` and other configuration settings as per your Azure setup.
+- please check the azure function supported python version in this scenario I used python 3.11.9
 
 ## Contributing
 
