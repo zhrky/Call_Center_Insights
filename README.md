@@ -102,19 +102,20 @@ Example `local.settings.json` (fill the keyaccording to description in your LOCA
 5. Deploy the function App
    
    After fill and run the commands, deploy this app to Azure
-   Click azure symbol in VsCode
+   
+   -Click azure symbol in VsCode
+   
    ![image](https://github.com/gatttaca01/Call_Center_Insight/assets/78308539/2b41f06f-05a4-466a-829e-7948d4500dfe)
 
-    Then create a Function App
+   -Then create a Function App
+   
    ![image](https://github.com/gatttaca01/Call_Center_Insight/assets/78308539/ef89d156-136b-41f0-892d-6e5c9608b8ea)
 
-   Give the name `callcenter-insights`
+   -Give the name `callcenter-insights`
 
-   Select `python 3.11`
+   -Select `python 3.11`
 
-   Select region  `sweden central`(optionally you can choose this region)
-
-   
+   -Select region  `sweden central`(optionally you can choose this region)
 
 
 ## File Structure
