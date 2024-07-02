@@ -122,12 +122,11 @@ Example `local.settings.json` (fill the keyaccording to description in your LOCA
 
    -Select region  `sweden central`(optionally you can choose this region)
 
+    Deployment image**
 
    After succesfully deployed app your function resource look like in Azure. Click browse and try the app : )
    
-   ![image](https://github.com/gatttaca01/Call_Center_Insight/assets/78308539/2ba3bfa6-eaf8-4a19-93ac-09334db1ba6b)
-
-
+   
 
 ## File Structure
 
