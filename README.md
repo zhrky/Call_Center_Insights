@@ -28,7 +28,7 @@ This repository contains an Azure Function App designed to provide insights from
 
     then open with Visual Studio Code or other IDE
 
-2. **create the virtual environment (venv)(optional) **:
+2. **Create the virtual environment (venv)(optional)**:
 
     ```bash
     python -m venv venv
