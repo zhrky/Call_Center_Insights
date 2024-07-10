@@ -51,7 +51,7 @@ def Welcomepage(req: func.HttpRequest) -> func.HttpResponse:
             <img height="60" src="LogoSAS" />
     </div>
     <div class="welcome-text">Call Center Insight Uygulamasına Hoşgeldiniz</div>
-    <a href="https://callcenter-insights.azurewebsites.net/api/Uploadpage" class="start-button">Let's Start</a>
+    <a href="https://localhost:7071/api/Uploadpage" class="start-button">Let's Start</a>
 </body>
 </html>
 
