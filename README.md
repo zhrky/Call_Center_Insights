@@ -6,7 +6,7 @@ This repository contains an Azure Function App designed to provide insights from
 
 - **Welcome Page**: A landing page with a welcome message and a link to start the process.
 - **Upload Page**: Allows users to upload JSON transcript files or WAV audio files.
-- **Extraction Page**: Processes the uploaded transcript file and extracts insights using Azure OpenAI(gpt-35-turbo).
+- **Extraction Page**: Processes the uploaded transcript file and extracts insights using Azure OpenAI(gpt-4o).
 - **Blob Storage Integration**: Stores uploaded files and generated JSON output in Azure Blob Storage.
 
 ## Setup
@@ -14,9 +14,20 @@ This repository contains an Azure Function App designed to provide insights from
 ### Prerequisites
 
 - Azure subscription
-- Azure Function App
-- Azure Blob Storage
-- Azure OpenAI
+- [Azure Function App](https://learn.microsoft.com/en-us/azure/azure-functions/)
+- [Azure Blob Storage](https://learn.microsoft.com/en-us/azure/storage/blobs/)
+- [Azure OpenAI](https://learn.microsoft.com/en-us/azure/ai-services/openai/)
+- Python
+    [Python 3.8+](https://www.python.org/downloads/)
+    [Python VS Code extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
+
+
+Azure Account - If you're new to Azure, get an Azure account for [free](https://azure.microsoft.com/en-us/free/?wt.mc_id=online-social-sicotin)
+ and you'll get some free Azure credits to get started.
+Azure subscription with access enabled for the Azure OpenAI Service - For more details, see the [Azure OpenAI Service documentation on how to get access](https://learn.microsoft.com/en-us/azure/ai-services/openai/overview#how-do-i-get-access-to-azure-openai).
+Azure OpenAI resource - For these samples, you'll need to deploy models like GPT-3.5 Turbo, GPT 4, DALL-E, and Whisper. See the Azure OpenAI Service documentation for more details on [deploying models](https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/create-resource?pivots=web-portal) and [model availability](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models)
+.
+
 
 ### Configuration
 
@@ -157,7 +168,7 @@ Provides a form for uploading JSON transcript files or WAV audio files, along wi
 
 Route: `/api/Extractionpage`
 
-Handles the extraction of insights from the uploaded transcript file using Azure OpenAI(gpt-35-turbo).
+Handles the extraction of insights from the uploaded transcript file using Azure OpenAI(gpt-4o).
 
 ![Screenshot 2024-05-21 131053](https://github.com/gatttaca01/Call_Center_Insight/assets/78308539/efa7d902-a269-4ca0-80e6-0ff5487ecaaf)
 
