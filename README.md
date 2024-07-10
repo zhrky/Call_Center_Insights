@@ -6,7 +6,7 @@ This repository contains an Azure Function App designed to provide insights from
 
 - **Welcome Page**: A landing page with a welcome message and a link to start the process.
 - **Upload Page**: Allows users to upload JSON transcript files or WAV audio files.
-- **Extraction Page**: Processes the uploaded transcript file and extracts insights using Azure OpenAI(gpt-4turbo).
+- **Extraction Page**: Processes the uploaded transcript file and extracts insights using Azure OpenAI(gpt-35-turbo).
 - **Blob Storage Integration**: Stores uploaded files and generated JSON output in Azure Blob Storage.
 
 ## Setup
@@ -28,7 +28,7 @@ This repository contains an Azure Function App designed to provide insights from
 
     then open with Visual Studio Code or other IDE
 
-2. **create the virtual environment (venv)(optional) **:
+2. **Create the virtual environment (venv)(optional)**:
 
     ```bash
     python -m venv venv

@@ -28,7 +28,7 @@ def insight_extraction(file_content, prompt):
         raise ValueError("The 'transcript_prompt' parameter is empty.")
     
     response = client.chat.completions.create(
-        model="gpt-4turbo", 
+        model="gpt-35-turbo", 
         response_format={
             "type": 'json_object'
         },
