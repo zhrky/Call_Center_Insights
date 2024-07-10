@@ -9,7 +9,7 @@ This repository contains an Azure Function App designed to provide insights from
 - **Extraction Page**: Processes the uploaded transcript file and extracts insights using Azure OpenAI(gpt-4o).
 - **Blob Storage Integration**: Stores uploaded files and generated JSON output in Azure Blob Storage.
 
-## Setup
+## Get Started
 
 ### Prerequisites
 
