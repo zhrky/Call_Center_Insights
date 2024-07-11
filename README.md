@@ -1,6 +1,10 @@
 # Call Center Insights Application
 
-This repository contains an Azure Function App designed to provide insights from call center transcripts. The application leverages Azure OpenAI for natural language processing and Azure Blob Storage for file storage. 
+This repository contains an Azure Function App designed to provide insights from call center transcripts using Azure OpenAI service. The application leverages Azure OpenAI for natural language processing and Azure Blob Storage for file storage. 
+
+**Project Aim **
+
+Call Center Insights Application is designed for businesses seeking to enhance their call center operations through advanced natural language processing. By leveraging Azure OpenAI and Azure Blob Storage, the application extracts valuable insights from call center transcripts, facilitating improved decision-making and operational efficiency. This tool is particularly beneficial for call center managers, analysts, and customer service teams looking to harness AI technology to optimize performance and customer satisfaction.
 
 ## Features
 
@@ -8,6 +12,10 @@ This repository contains an Azure Function App designed to provide insights from
 - **Upload Page**: Allows users to upload JSON transcript files or WAV audio files.
 - **Extraction Page**: Processes the uploaded transcript file and extracts insights using Azure OpenAI(gpt-4o).
 - **Blob Storage Integration**: Stores uploaded files and generated JSON output in Azure Blob Storage.
+
+## Architecture
+
+![image](https://github.com/user-attachments/assets/09e2450f-1633-4109-8520-ae3f78c0fc67)
 
 ## Get Started
 
@@ -20,6 +28,7 @@ This repository contains an Azure Function App designed to provide insights from
 - Python
     [Python 3.8+](https://www.python.org/downloads/)
     [Python VS Code extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
+- [Azure Speech Service](https://azure.microsoft.com/en-us/products/ai-services/ai-speech)
 
 
 Azure Account - If you're new to Azure, get an Azure account for [free](https://azure.microsoft.com/en-us/free/?wt.mc_id=online-social-sicotin)
@@ -29,6 +38,8 @@ Azure subscription with access enabled for the Azure OpenAI Service - For more d
 
 Azure OpenAI resource - For these samples, you'll need to deploy models like GPT-3.5 Turbo, GPT 4, DALL-E, and Whisper. See the Azure OpenAI Service documentation for more details on [deploying models](https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/create-resource?pivots=web-portal) and [model availability](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models)
 .
+
+
 
 
 ### Configuration
