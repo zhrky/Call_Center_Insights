@@ -2,7 +2,7 @@
 
 This repository contains an Azure Function App designed to provide insights from call center transcripts using Azure OpenAI service. The application leverages Azure OpenAI for natural language processing and Azure Blob Storage for file storage. 
 
-**Project Aim **
+###**Project Aim**
 
 Call Center Insights Application is designed for businesses seeking to enhance their call center operations through advanced natural language processing. By leveraging Azure OpenAI and Azure Blob Storage, the application extracts valuable insights from call center transcripts, facilitating improved decision-making and operational efficiency. This tool is particularly beneficial for call center managers, analysts, and customer service teams looking to harness AI technology to optimize performance and customer satisfaction.
 
